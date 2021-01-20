@@ -1,0 +1,21 @@
+<div th:fragment="list" >
+    <div class="row">
+            <div th:each="product : ${listProducts}" class="col-md-3 col-sm-6">
+                <div class="product-grid">
+                    <div class="product-image">
+                        <a><img class="img-fluid d-block mx-auto" th:src="${product.getImgpath()}"></a>
+                    </div>
+                    <div class="product-content">
+                        <h4 class="title"><a th:text="${product.getName()}">name</a></h4>
+                        <div class="price" >
+                            <h3>
+                            <span th:text="${product.getPrice()}" >price</span>$
+                            </h3>
+                        </div>
+                        <a class="add-to-cart btn btn-secondary" th:id="${product.getId()}" href="#">+ Add To Cart</a>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+</div>
